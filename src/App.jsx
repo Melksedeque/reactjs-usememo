@@ -24,9 +24,17 @@ const List = styled.ul`
   }
 `;
 
+function calcularImposto(valorBruto) {
+  console.log("Calculando imposto...");
+  if (!valorBruto) return 0;
+  return parseFloat(valorBruto) * 0.75;
+}
+
 function App() {
   const [nomeDoImposto, setNomeDoImposto] = useState("");
   const [valorBruto, setValorBruto] = useState("");
+
+  const valorDoImposto = calcularImposto(valorBruto);
 
   return (
     <div className="App">
@@ -44,10 +52,10 @@ function App() {
       />
       <List>
         <li>
-          Nome do Imposto: <strong>{nomeDoImposto}</strong>
+          Nome do imposto: <strong>{nomeDoImposto}</strong>
         </li>
         <li>
-          Valor Bruto: <strong>{valorBruto}</strong>
+          Valor do imposto: <strong>R$ {valorDoImposto}</strong>
         </li>
       </List>
     </div>

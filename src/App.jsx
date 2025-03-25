@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 
@@ -34,7 +34,10 @@ function App() {
   const [nomeDoImposto, setNomeDoImposto] = useState("");
   const [valorBruto, setValorBruto] = useState("");
 
-  const valorDoImposto = calcularImposto(valorBruto);
+  const valorDoImposto = useMemo(
+    () => calcularImposto(valorBruto),
+    [valorBruto]
+  );
 
   return (
     <div className="App">

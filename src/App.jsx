@@ -45,7 +45,7 @@ function App() {
         onChange={(e) => setNomeDoImposto(e.target.value)}
       />
       <Input
-        type="text"
+        type="number"
         placeholder="Valor Bruto"
         value={valorBruto}
         onChange={(e) => setValorBruto(e.target.value)}
